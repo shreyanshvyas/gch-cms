@@ -212,11 +212,10 @@ export default function SalaryIntelligenceDashboard() {
         setSelectedLevel((cur) => (cur === level ? null : level));
     }
 
-    const formatTooltip: (value: ValueType, name: NameType) => [string, string] = (value, name) => [
-        currencyFormatter.format(Number(value)),
-        String(name),
-    ];
-
+   const formatTooltip = (value: any, name: any): [string, string] => [
+  currencyFormatter.format(Number(value ?? 0)),
+  String(name ?? ""),
+];
     return (
         <div className="max-w-7xl mx-auto xl:px-0 md:px-12 px-6 md:py-20 py-12">
             <div className="flex md:flex-row flex-col items-center md:justify-between justify-center md:text-left text-center mb-6">
